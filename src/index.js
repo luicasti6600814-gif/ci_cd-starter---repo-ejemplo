@@ -42,6 +42,16 @@ const server = http.createServer((req, res) => {
     res.end(JSON.stringify({ error: 'Esto es un error de prueba' }));
     return;
   }
+  if (req.url === '/aboutme') {
+  res.statusCode = 200;
+  res.end(JSON.stringify({
+    nombre: 'TU NOMBRE AQUÍ',
+    carrera: 'Arquitectura de Software',
+    universidad: 'Utadeo',
+    año: 2026
+  }));
+  return;
+  }
 
   // =====================================================
   // ACTIVIDAD 1: agrega tu endpoint /aboutme aquí arriba
